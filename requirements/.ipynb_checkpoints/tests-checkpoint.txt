@@ -1,0 +1,15 @@
+asynctest
+codecov
+flake8
+isort
+# Note: used for kwarray.group_items, this may be ported to mmcv in the future.
+kwarray
+Polygon3
+pytest
+pytest-cov
+pytest-runner
+python-Levenshtein
+ubelt
+xdoctest >= 0.10.0
+yapf==0.40.1
+fvcore==0.1.5.post20221220
