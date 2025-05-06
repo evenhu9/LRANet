@@ -12,7 +12,9 @@ We recommend using [Anaconda](https://www.anaconda.com/) to manage environments.
 ```
 conda create -n lranet python=3.7 -y
 conda activate lranet
- conda install pytorch=1.8 torchvision cudatoolkit=11.1 -c pytorch -c nvidia -c conda-forge
+#使用.whl文件安装pytorch和torchvision     ----hu yiwen
+pip install torch-1.8.1+cu111-cp37-cp37m-linux_x86_64.whl
+pip install torchvision-0.9.1+cu111-cp37-cp37m-linux_x86_64.whl
 pip install mmcv-full==1.3.9 -f https://download.openmmlab.com/mmcv/dist/cu111/torch1.8.0/index.html
 pip install mmdet==2.14.0
 git clone https://github.com/ychensu/LRANet
@@ -35,19 +37,7 @@ data
 │  └─imgs
 │      ├─training
 │      └─test
-├─CTW1500
-│  │ instances_training.json
-│  │ instance_test.json
-│  └─imgs
-│      ├─training
-│      └─test
-├─synthtext-150k
-      ├─syntext1
-      │  │  train_polygon.json
-      │  └─images
-      ├─syntext2
-         │  train_polygon.json
-         └─images
+
 ```
 
 ## Train
@@ -57,11 +47,14 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 ./tools/dist_train.sh configs/lranet/lranet_totalte
 
 ## Evaluation
 ```
-CUDA_VISIBLE_DEVICES=0 python tools/test.py configs/lranet/lranet_totaltext_det.py work_dirs/totaltext_det/latest.pth --eval hmean-e2e
+CUDA_VISIBLE_DEVICES=0 python tools/test.py configs/lranet/lranet_totaltext_det.py work_dirs/totaltext_det/latest.pth --eval hmean-iou
 ```
 
 
-## Trained Model
+## Trained Model(原论文)
+Total-Text : [One Drive](https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL3UvYy81YWE2OWZiZTU4NDY0MDYxL0VZdmxkOXBEWUFGSnM2SERNNWFscWFjQlRpejVtWG5WZmxoQ1JiUFlmX0x1SXc%5FZT1rY3RBa3k&cid=5AA69FBE58464061&id=5AA69FBE58464061%21sda77e58b60434901b3a1c33396a5a9a7&parId=root&o=OneUp)
+
+## Trained Model(复现)
 Total-Text : [One Drive](https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL3UvYy81YWE2OWZiZTU4NDY0MDYxL0VZdmxkOXBEWUFGSnM2SERNNWFscWFjQlRpejVtWG5WZmxoQ1JiUFlmX0x1SXc%5FZT1rY3RBa3k&cid=5AA69FBE58464061&id=5AA69FBE58464061%21sda77e58b60434901b3a1c33396a5a9a7&parId=root&o=OneUp)
 
 
