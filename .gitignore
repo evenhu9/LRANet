@@ -1,0 +1,14 @@
+*.pth
+*.npy
+*.zip
+*.md
+__pycache__/
+build/
+data/
+eigenanchors/
+figs/
+mmocr/
+mmocr.egg-info/
+results/
+tests/
+tools/
