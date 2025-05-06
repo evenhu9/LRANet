@@ -7,3 +7,4 @@ figs/
 mmocr/
 mmocr.egg-info/
 
+work_dirs/**/*.pth
