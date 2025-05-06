@@ -4,8 +4,5 @@
 *.pth
 __pycache__/
 data/
-eigenanchors/
-figs/
-mmocr/
-mmocr.egg-info/
+
 
