@@ -56,9 +56,8 @@ PYTHONPATH=$(pwd) CUDA_VISIBLE_DEVICES=0  ./tools/dist_train.sh configs/lranet/l
 ```
 
 ## Test
-results.zip : [One Drive](https://1drv.ms/u/c/71ea5bbc72455b58/EYchn4vxywhGuZng3cIFEzQBwZUUhaNasnloMiZn7bVnIg?e=vFDcoT)
 ```
-#测试多张图片并输出可视化结果，结果在results.zip中
+#测试多张图片并输出可视化结果，结果在results文件夹中
 PYTHONPATH=$(pwd) python ./tools/det_test_imgs.py  ./data/totaltext/imgs/  ./data/totaltext/test_imgs_list.txt configs/lranet/lranet_totaltext_det.py work_dirs/totaltext_det/epoch_10.pth --out-dir ./results/totaltext_det/
 ```
 
