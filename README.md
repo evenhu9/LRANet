@@ -31,12 +31,12 @@ Please download TotalText, CTW1500, and SynText150k according to the guide provi
 Please download and extract the above datasets into the `data` folder following the file structure below.
 ```
 data
-├─totaltext
-│  │ totaltext_train.json
-│  │ totaltext_test.json
-│  └─imgs
-│      ├─training
-│      └─test
+└─totaltext
+  │ totaltext_train.json
+  │ totaltext_test.json
+  └─imgs
+      ├─training
+      └─test
 
 ```
 
@@ -55,7 +55,7 @@ CUDA_VISIBLE_DEVICES=0 python tools/test.py configs/lranet/lranet_totaltext_det.
 Total-Text : [One Drive](https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL3UvYy81YWE2OWZiZTU4NDY0MDYxL0VZdmxkOXBEWUFGSnM2SERNNWFscWFjQlRpejVtWG5WZmxoQ1JiUFlmX0x1SXc%5FZT1rY3RBa3k&cid=5AA69FBE58464061&id=5AA69FBE58464061%21sda77e58b60434901b3a1c33396a5a9a7&parId=root&o=OneUp)
 
 ## Trained Model(复现)
-Total-Text : [One Drive](https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL3UvYy81YWE2OWZiZTU4NDY0MDYxL0VZdmxkOXBEWUFGSnM2SERNNWFscWFjQlRpejVtWG5WZmxoQ1JiUFlmX0x1SXc%5FZT1rY3RBa3k&cid=5AA69FBE58464061&id=5AA69FBE58464061%21sda77e58b60434901b3a1c33396a5a9a7&parId=root&o=OneUp)
+Total-Text : [One Drive](https://1drv.ms/u/c/71ea5bbc72455b58/EaSlt59YAoFJmcBwiuDOEmUB3VtesaCFC3NwKmzAVYhuOA?e=SpCeZW)
 
 
 ## Acknowledgement
