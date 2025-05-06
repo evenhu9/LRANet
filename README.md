@@ -9,6 +9,10 @@ This is the official implementation of Paper: [LRANet: Towards Accurate and Effi
 ## Environment
 This implementation is based on mmocr-0.2.1, so please refer to it for detailed requirements. Our code has been test with Pytorch-1.8.1 + cuda11.1
 We recommend using [Anaconda](https://www.anaconda.com/) to manage environments. Run the following commands to install dependencies.
+
+Pytorch : [One Drive](https://1drv.ms/u/c/71ea5bbc72455b58/EfoJNNlOVmFPq7TzT24eTPEB1B3mDpOPfzUOSg67cC9iFg?e=OK5bWD)
+
+torchvision : [One Drive](https://1drv.ms/u/c/71ea5bbc72455b58/ESdd8-ND5HBOutFCq318fEYByCzOcJD1IrRf1zcwCvI5OA?e=b582zr)
 ```
 conda create -n lranet python=3.7 -y
 conda activate lranet
@@ -52,6 +56,7 @@ PYTHONPATH=$(pwd) CUDA_VISIBLE_DEVICES=0  ./tools/dist_train.sh configs/lranet/l
 ```
 
 ## Test
+results.zip : [One Drive](https://1drv.ms/u/c/71ea5bbc72455b58/EYchn4vxywhGuZng3cIFEzQBwZUUhaNasnloMiZn7bVnIg?e=vFDcoT)
 ```
 #测试多张图片并输出可视化结果，结果在results.zip中
 PYTHONPATH=$(pwd) python ./tools/det_test_imgs.py  ./data/totaltext/imgs/  ./data/totaltext/test_imgs_list.txt configs/lranet/lranet_totaltext_det.py work_dirs/totaltext_det/epoch_10.pth --out-dir ./results/totaltext_det/
@@ -67,12 +72,14 @@ PYTHONPATH=$(pwd) CUDA_VISIBLE_DEVICES=0 python tools/test.py configs/lranet/lra
 
 
 ## Trained Model(原论文)
-下载后放在./work_dir/total_text路径下
-Total-Text : [One Drive](https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL3UvYy81YWE2OWZiZTU4NDY0MDYxL0VZdmxkOXBEWUFGSnM2SERNNWFscWFjQlRpejVtWG5WZmxoQ1JiUFlmX0x1SXc%5FZT1rY3RBa3k&cid=5AA69FBE58464061&id=5AA69FBE58464061%21sda77e58b60434901b3a1c33396a5a9a7&parId=root&o=OneUp)
+下载后放在./work_dirs/totaltext_det路径下
+
+使用Total-Text数据集训练 : [One Drive](https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL3UvYy81YWE2OWZiZTU4NDY0MDYxL0VZdmxkOXBEWUFGSnM2SERNNWFscWFjQlRpejVtWG5WZmxoQ1JiUFlmX0x1SXc%5FZT1rY3RBa3k&cid=5AA69FBE58464061&id=5AA69FBE58464061%21sda77e58b60434901b3a1c33396a5a9a7&parId=root&o=OneUp)
 
 ## Trained Model(复现)
 下载后放在./work_dir/total_text路径下
-Total-Text : [One Drive](https://1drv.ms/u/c/71ea5bbc72455b58/EaSlt59YAoFJmcBwiuDOEmUB3VtesaCFC3NwKmzAVYhuOA?e=SpCeZW)
+
+使用Total-Text数据集训练 : [One Drive](https://1drv.ms/u/c/71ea5bbc72455b58/EaSlt59YAoFJmcBwiuDOEmUB3VtesaCFC3NwKmzAVYhuOA?e=SpCeZW)
 
 
 ## Acknowledgement
