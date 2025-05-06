@@ -17,10 +17,16 @@ pip install torch-1.8.1+cu111-cp37-cp37m-linux_x86_64.whl
 pip install torchvision-0.9.1+cu111-cp37-cp37m-linux_x86_64.whl
 pip install mmcv-full==1.3.9 -f https://download.openmmlab.com/mmcv/dist/cu111/torch1.8.0/index.html
 pip install mmdet==2.14.0
+git clone https://github.com/open-mmlab/mmocr.git
+cd mmocr
+git checkout v0.2.1
+pip install -e .
+cd ..
 git clone https://github.com/ychensu/LRANet
 cd LRANet
 pip install -r requirements.txt
 python setup.py build develop
+
 ```
 
 ## Dataset
@@ -42,19 +48,30 @@ data
 
 ## Train
 ```
-CUDA_VISIBLE_DEVICES=0,1,2,3 ./tools/dist_train.sh configs/lranet/lranet_totaltext_det.py work_dirs/totaltext_det 4
+PYTHONPATH=$(pwd) CUDA_VISIBLE_DEVICES=0  ./tools/dist_train.sh configs/lranet/lranet_totaltext_det.py work_dirs/totaltext_det 1
+```
+
+## Test
+```
+#测试多张图片并输出可视化结果，结果在results.zip中
+PYTHONPATH=$(pwd) python ./tools/det_test_imgs.py  ./data/totaltext/imgs/  ./data/totaltext/test_imgs_list.txt configs/lranet/lranet_totaltext_det.py work_dirs/totaltext_det/epoch_10.pth --out-dir ./results/totaltext_det/
 ```
 
 ## Evaluation
 ```
-CUDA_VISIBLE_DEVICES=0 python tools/test.py configs/lranet/lranet_totaltext_det.py work_dirs/totaltext_det/xxx.pth --eval hmean-iou
+#测试原论文结果模型
+PYTHONPATH=$(pwd) CUDA_VISIBLE_DEVICES=0 python tools/test.py configs/lranet/lranet_totaltext_det.py work_dirs/totaltext_det/final_totaltext.pth --eval hmean-iou
+#测试复现模型
+PYTHONPATH=$(pwd) CUDA_VISIBLE_DEVICES=0 python tools/test.py configs/lranet/lranet_totaltext_det.py work_dirs/totaltext_det/epoch_10.pth --eval hmean-iou
 ```
 
 
 ## Trained Model(原论文)
+下载后放在./work_dir/total_text路径下
 Total-Text : [One Drive](https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL3UvYy81YWE2OWZiZTU4NDY0MDYxL0VZdmxkOXBEWUFGSnM2SERNNWFscWFjQlRpejVtWG5WZmxoQ1JiUFlmX0x1SXc%5FZT1rY3RBa3k&cid=5AA69FBE58464061&id=5AA69FBE58464061%21sda77e58b60434901b3a1c33396a5a9a7&parId=root&o=OneUp)
 
 ## Trained Model(复现)
+下载后放在./work_dir/total_text路径下
 Total-Text : [One Drive](https://1drv.ms/u/c/71ea5bbc72455b58/EaSlt59YAoFJmcBwiuDOEmUB3VtesaCFC3NwKmzAVYhuOA?e=SpCeZW)
 
 
