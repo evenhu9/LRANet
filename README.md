@@ -47,7 +47,7 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 ./tools/dist_train.sh configs/lranet/lranet_totalte
 
 ## Evaluation
 ```
-CUDA_VISIBLE_DEVICES=0 python tools/test.py configs/lranet/lranet_totaltext_det.py work_dirs/totaltext_det/latest.pth --eval hmean-iou
+CUDA_VISIBLE_DEVICES=0 python tools/test.py configs/lranet/lranet_totaltext_det.py work_dirs/totaltext_det/xxx.pth --eval hmean-iou
 ```
 
 
