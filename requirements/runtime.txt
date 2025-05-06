@@ -6,7 +6,7 @@ numba>=0.45.1
 numpy
 Polygon3
 pyclipper
-rapidfuzz
+rapidfuzz==1.1.1
 scikit-image
 six
 terminaltables
