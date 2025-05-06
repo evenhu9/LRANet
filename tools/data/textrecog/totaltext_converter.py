@@ -297,6 +297,11 @@ def generate_ann(root_path, split, image_infos):
             dst_img_name = f'{src_img_root}_{index}.png'
             index += 1
             dst_img_path = osp.join(dst_image_root, dst_img_name)
+            
+            if dst_img is None or dst_img.size == 0:
+                print(f"[WARNING] Skipping empty image: {src_img_path}")
+                continue
+
             mmcv.imwrite(dst_img, dst_img_path)
             lines.append(f'{osp.basename(dst_image_root)}/{dst_img_name} '
                          f'{word}')
